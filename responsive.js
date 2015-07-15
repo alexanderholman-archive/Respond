@@ -4,8 +4,8 @@
 ( function( $ ) {
 	$.respond = function ( options ) {
 		var _self = $.respond;
-		if ( typeof options != "undefined" ) self.options = $.extend( true, self.options, options );
-		if ( self.options.switches.is.length === 0 ) self.functions.handle.sizes();
+		if ( typeof options != "undefined" ) _self.options = $.extend( true, _self.options, options );
+		if ( _self.options.switches.is.length === 0 ) _self.functions.handle.sizes();
 		_self.functions.respond();
 		_self.cache.$window.on(
 			'resize orientationchange',
