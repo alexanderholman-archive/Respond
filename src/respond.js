@@ -100,10 +100,12 @@
 				if ( $.respond.options.variables.is != '' ) $.respond.options.variables.was = $.respond.options.variables.is;
 				if ( $.respond.options.switches.is[ $.respond.options.variables.key ] ) {
 					if ( size != $.respond.options.variables.was && $.respond.options.variables.was != '' ) {
+						$.respond.cache.$body.removeClass($.respond.options.variables.was);
 						$.respond.functions.callOnFunction( 'was', $.respond.options.variables.was );
 					}
 					$.respond.options.variables.is = size;
 					if ( $.respond.options.variables.is != $.respond.options.variables.was ) {
+						$.respond.cache.$body.addClass($.respond.options.variables.is);
 						$.respond.functions.callOnFunction( 'is', $.respond.options.variables.is );
 					}
 				}
