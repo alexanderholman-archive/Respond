@@ -1,17 +1,17 @@
 /*
  Default sizes based on bootstrap
  */
-( function( $ ) {
+( function( $, document, window ) {
 	$.respond = function ( options ) {
 		var _self = $.respond;
-		if ( typeof options != "undefined" ) _self.options = $.extend( true, _self.options, options );
-		if ( _self.options.switches.is.length === 0 ) _self.functions.handle.sizes();
+		if ( typeof options != "undefined" ) { _self.options = $.extend( {}, _self.options, options ); }
+		if ( _self.options.switches.is.length === 0 ) { _self.functions.handle.sizes(); }
 		_self.functions.respond();
 		_self.cache.$window.on(
 			'resize orientationchange',
 			_self.functions.timeoutRespond
 		);
-		if (typeof _self.cache.$window.addEventListener != "undefined") {
+		if (typeof _self.cache.$window.addEventListener !== "undefined") {
 			_self.cache.$window.addEventListener("orientationchange", function() {
 				_self.functions.respond();
 				_self.cache.$body.hide().show(0);
@@ -71,8 +71,7 @@
 	$.respond.functions = {
 		callOnFunction: function ( type, fn, fnOptions ) {
 			fnOptions = typeof fnOptions != "undefined" ? fnOptions : {};
-			if ( typeof $.respond.options.functions.on[ type ][ fn ] == "function" ) return $.respond.options.functions.on[ type ][ fn ] ( fnOptions );
-			else return false;
+			return $.respond.options.functions.on[ type ][ fn ] ( fnOptions ) || false;
 		},
 		handle: {
 			sizes: function () {
@@ -97,7 +96,7 @@
 			for ( var size in $.respond.options.variables.sizes ){
 				$.respond.options.variables.key = size;
 				$.respond.options.switches.is[ $.respond.options.variables.key ] = ( $.respond.options.variables.sizes[ $.respond.options.variables.key ].min === null || $.respond.options.variables.viewport.width >= $.respond.options.variables.sizes[ $.respond.options.variables.key ].min ) && ( $.respond.options.variables.sizes[ $.respond.options.variables.key ].max === null || $.respond.options.variables.viewport.width <= $.respond.options.variables.sizes[ $.respond.options.variables.key ].max );
-				if ( $.respond.options.variables.is != '' ) $.respond.options.variables.was = $.respond.options.variables.is;
+				if ( $.respond.options.variables.is != '' ) { $.respond.options.variables.was = $.respond.options.variables.is; }
 				if ( $.respond.options.switches.is[ $.respond.options.variables.key ] ) {
 					if ( size != $.respond.options.variables.was && $.respond.options.variables.was != '' ) {
 						$.respond.functions.callOnFunction( 'was', $.respond.options.variables.was );
@@ -117,4 +116,4 @@
 			);
 		}
 	};
-} ( jQuery ) );
+} )( jQuery, document, window );
