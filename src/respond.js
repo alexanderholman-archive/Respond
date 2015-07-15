@@ -4,6 +4,7 @@
 ( function( $ ) {
 	$.respond = function ( options ) {
 		var _self = $.respond;
+		_self.functions.handle.cacheReInit();
 		if ( typeof options != "undefined" ) _self.options = $.extend( true, _self.options, options );
 		if ( _self.options.switches.is.length === 0 ) _self.functions.handle.sizes();
 		_self.functions.respond();
@@ -62,12 +63,7 @@
 			}
 		}
 	};
-	$.respond.cache = {
-		$window: $( window ),
-		$body: $( 'body' ),
-		document: document,
-		window: window
-	};
+	$.respond.cache = {};
 	$.respond.functions = {
 		callOnFunction: function ( type, fn, fnOptions ) {
 			fnOptions = typeof fnOptions != "undefined" ? fnOptions : {};
@@ -75,6 +71,17 @@
 			else return false;
 		},
 		handle: {
+			cacheReInit: function () {
+				$.respond.cache = $.extend(
+					$.respond.cache,
+					{
+						$window: $( window ),
+						$body: $( 'body' ),
+						document: document,
+						window: window
+					}
+				);
+			},
 			sizes: function () {
 				for ( var size in $.respond.options.variables.sizes ){
 					$.respond.options.variables.key = size;
