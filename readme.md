@@ -33,4 +33,4 @@ In the head of your document add the following lines:
     );
 </script>
 ```
-The above will output the "is" size and "was" size to the console when each size is hit.
+The above will output the "is" size and "was" size to the console when each size is hit and on first run.
