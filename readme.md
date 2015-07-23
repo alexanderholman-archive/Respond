@@ -34,3 +34,7 @@ In the head of your document add the following lines:
 </script>
 ```
 The above will output the "is" size and "was" size to the console when each size is hit and on first run.
+
+##Example
+
+See the [example](https://rawgit.com/alexanderholman/Respond/master/example/getting-started.html)
