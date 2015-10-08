@@ -1,6 +1,9 @@
 #Respond (jQuery Plugin)
 written to fire events when the browser hits given sizes (the bootstrap breakpoints by default)
 
+##Talk about it
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im//alexanderholman/Respond?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ##Getting started
 **This plugin requires jQuery to function**
 *jQuery can be downloaded or called from [here](https://code.jquery.com/jquery-1.11.3.min.j)*
