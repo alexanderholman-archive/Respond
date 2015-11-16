@@ -1,6 +1,4 @@
 #Respond (jQuery Plugin)
-
-[![Join the chat at https://gitter.im/alexanderholman/Respond](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/alexanderholman/Respond?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 written to fire events when the browser hits given sizes (the bootstrap breakpoints by default)
 
 ##Talk about it
