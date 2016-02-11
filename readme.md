@@ -4,9 +4,6 @@ written to fire events when the browser hits given sizes (the bootstrap breakpoi
 ##Talk about it
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im//alexanderholman/Respond?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-##Status (set up in progress)
-[![Build Status](https://travis-ci.org/alexanderholman/Respond.svg)](https://travis-ci.org/alexanderholman/Respond)
-
 ##Getting started
 **This plugin requires jQuery to function**
 *jQuery can be downloaded or called from [here](https://code.jquery.com/jquery-1.11.3.min.j)*
